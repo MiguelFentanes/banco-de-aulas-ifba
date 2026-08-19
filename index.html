@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco de Aulas</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --quote-bg: #0284c715;
+      --input-bg: #334155;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 2rem 1rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    header {
+      margin-bottom: 2rem;
+      text-align: center;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 1.5rem;
+    }
+
+    h1 {
+      margin: 0 0 0.5rem 0;
+      color: var(--accent);
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .filtros {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .filtros input, .filtros select {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.75rem 1rem;
+      background-color: var(--input-bg);
+      border: 1px solid #475569;
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .filtros select {
+      cursor: pointer;
+    }
+
+    .filtros input:focus, .filtros select:focus {
+      border-color: var(--accent);
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      border: 1px solid #334155;
+    }
+
+    .card-header {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-docente {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    blockquote {
+      margin: 0 0 1.25rem 0;
+      padding: 1rem 1.25rem;
+      background-color: var(--quote-bg);
+      border-left: 4px solid var(--accent);
+      border-radius: 4px;
+      font-style: italic;
+    }
+
+    ul.topicos {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    ul.topicos li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Banco de Aulas</h1>
+      <p class="subtitle">Registro contínuo dos conteúdos e resumos do curso</p>
+    </header>
+
+    <div class="filtros">
+      <input type="text" id="filtro-data" placeholder="Filtrar por data (ex: 17/08/2026)...">
+      <select id="filtro-docente">
+        <option value="">Todos os professores</option>
+        <option value="Camilo Alves Carvalho">Camilo Alves Carvalho</option>
+        <option value="Viviane Maria Lélis Carvalho">Viviane Maria Lélis Carvalho</option>
+        <option value="Liojes de Oliveira Carneiro">Liojes de Oliveira Carneiro</option>
+        <option value="Allan de Sousa Soares">Allan de Sousa Soares</option>
+        <option value="Poliana">Poliana</option>
+        <option value="João Pinto">João Pinto</option>
+      </select>
+    </div>
+
+    <main id="lista-aulas">
+      <p>Carregando resumos...</p>
+    </main>
+  </div>
+
+  <script>
+    let todasAsAulas = [];
+
+    function converterData(dataStr) {
+      const [dia, mes, ano] = dataStr.split('/');
+      return new Date(ano, mes - 1, dia);
+    }
+
+    async function carregarAulas() {
+      const container = document.getElementById('lista-aulas');
+      try {
+        const resposta = await fetch('aulas.json');
+        todasAsAulas = await resposta.json();
+        
+        todasAsAulas.sort((a, b) => converterData(b.data) - converterData(a.data));
+
+        renderizarAulas(todasAsAulas);
+      } catch (erro) {
+        container.innerHTML = '<p style="color: #f87171;">Erro ao carregar o banco de dados de aulas.</p>';
+        console.error(erro);
+      }
+    }
+
+    function renderizarAulas(aulas) {
+      const container = document.getElementById('lista-aulas');
+      container.innerHTML = '';
+
+      if (aulas.length === 0) {
+        container.innerHTML = '<p style="color: var(--text-muted); text-align: center;">Nenhum resumo encontrado com esses filtros.</p>';
+        return;
+      }
+
+      aulas.forEach(aula => {
+        const card = document.createElement('article');
+        card.className = 'card';
+
+        const topicosHTML = aula.topicos.map(t => `<li>${t}</li>`).join('');
+        const docenteHTML = aula.autor ? `<div class="card-docente"><strong>Docente:</strong> ${aula.autor}</div>` : '';
+        
+        let citacaoHTML = '';
+        if (aula.citacao) {
+          citacaoHTML = `
+            <blockquote>
+              “${aula.citacao}”
+            </blockquote>
+          `;
+        }
+
+        card.innerHTML = `
+          <div class="card-header">RESUMO DA AULA (${aula.data})</div>
+          ${docenteHTML}
+          ${citacaoHTML}
+          <ul class="topicos">
+            ${topicosHTML}
+          </ul>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function aplicarFiltros() {
+      const buscaData = document.getElementById('filtro-data').value.toLowerCase();
+      const docenteSelecionado = document.getElementById('filtro-docente').value.toLowerCase();
+
+      const aulasFiltradas = todasAsAulas.filter(aula => {
+        const combinaData = !buscaData || aula.data.toLowerCase().includes(buscaData);
+        
+        const autorAula = (aula.autor || '').toLowerCase();
+        const combinaDocente = !docenteSelecionado || 
+          autorAula.includes(docenteSelecionado) || 
+          docenteSelecionado.includes(autorAula);
+
+        return combinaData && combinaDocente;
+      });
+
+      renderizarAulas(aulasFiltradas);
+    }
+
+    document.getElementById('filtro-data').addEventListener('input', aplicarFiltros);
+    document.getElementById('filtro-docente').addEventListener('change', aplicarFiltros);
+
+    carregarAulas();
+  </script>
+</body>
+</html>

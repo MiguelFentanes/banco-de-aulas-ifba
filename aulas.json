@@ -1,0 +1,60 @@
+[
+  {
+    "data": "04/08/2026",
+    "autor": "Viviane Maria Lélis Carvalho",
+    "topicos": [
+      "Fundamentos de sistemas de informação",
+      "Conversões binárias, decimais, octogonais e hexadecimais"
+    ]
+  },
+  {
+    "data": "11/08/2026",
+    "autor": "Viviane Maria Lélis Carvalho",
+    "topicos": [
+      "O papel da Informação nas Organizações"
+    ]
+  },
+  {
+    "data": "12/08/2026",
+    "autor": "Liojes de Oliveira Carneiro",
+    "topicos": [
+      "O que é Lógica? Tipos de lógica",
+      "Resolução de um problema computacional através da Entrada, Processamento e Saída",
+      "Conceito, Características e tipos de Algoritmos",
+      "Conceito de Variáveis"
+    ]
+  },
+  {
+    "data": "13/08/2026",
+    "autor": "Allan de Sousa Soares",
+    "topicos": [
+      "Operações com sistemas de numerações posicionais"
+    ]
+  },
+  {
+    "data": "17/08/2026",
+    "autor": "Camilo Alves Carvalho",
+    "citacao": "A computação é o entendimento e interpretação do mundo através da Máquina",
+    "topicos": [
+      "Utilizações, implementações e tecnologias das LLM's",
+      "As diversas tecnologias ao longo da história e suas utilizações e evoluções",
+      "Lei dos Retornos Acelerados",
+      "As sete artes Clássicas e as artes Modernas e Contemporâneas"
+    ]
+  }
+  {
+    "data": "18/08/2026",
+    "autor": "Viviane Maria Lélis Carvalho",
+    "topicos": [
+      "Dados, Informação, Conhecimento, Inteligência",
+      "Diferença entre Dado e Informação",
+      "Conceito de Dado e informação",
+      "Tipos de dados",
+      "Diferença entre Ciência da Informação Tecnologia da Informação",
+      "valor e qualidade das Informações",
+      "Informações qualitativas e Quantitativas",
+      "Relevância das informações: Críticas, Potenciais, Mínimas e Irrelevantes",
+      "Relevância, precisão, confiabilidade, temporalidade e compreensibilidade",
+    ]
+  }
+]
