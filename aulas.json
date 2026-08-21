@@ -56,5 +56,21 @@
       "Relevância das informações: Críticas, Potenciais, Mínimas e Irrelevantes",
       "Relevância, precisão, confiabilidade, temporalidade e compreensibilidade"
     ]
+  },
+  {
+    "data": "20/08/2026",
+    "autor": "Allan de Sousa Soares",
+    "topicos": [
+
+      "Introdução a lógica proposicional",
+      "Proposição lógica",
+      "Conectivos e Operações lógicas",
+      "Negações Lógicas",
+      "Conjunção e Disjunção de Proposições",
+      "Proposições Condicionais",
+      "Oposta, Contrapositiva, Inversa",
+      "Proposições bicondicionais",
+      "Regras de equivalência"
+      ]
   }
 ]
