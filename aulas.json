@@ -72,5 +72,34 @@
       "Proposições bicondicionais",
       "Regras de equivalência"
       ]
-  }
+  },
+  {
+      "data": "21/08/2026"
+      "autor": "Poliana Freire dos Anjos de Oliveira"
+      topicos": [
+        
+        "Cognatos",
+        "Falsos Cognatos",
+        "Leitura de texto em Inglês",
+        "Tradução de textos",
+        "Marcas Tipográficas",
+        "Interpretação de texto e questões sobre",
+        "Conceito de Skimming"
+        ]
+  },
+  {
+      "data": "22/08/2026"
+      "autor": "João Pinto"
+      "topicos": [
+        
+        "Textualidade",
+        "Coerência e coesão",
+        "Intencionalidade",
+        "Informatividade",
+        "Situacionalidade",
+        "Intertextualidade",
+        "Aceitabilidade"
+        ]
+   }
+        
 ]
