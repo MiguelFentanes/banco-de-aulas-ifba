@@ -58,48 +58,29 @@
     ]
   },
   {
-    "data": "20/08/2026",
-    "autor": "Allan de Sousa Soares",
+    "data": "21/08/2026",
+    "autor": "Poliana Freire dos Anjos de Oliveira",
     "topicos": [
-
-      "Introdução a lógica proposicional",
-      "Proposição lógica",
-      "Conectivos e Operações lógicas",
-      "Negações Lógicas",
-      "Conjunção e Disjunção de Proposições",
-      "Proposições Condicionais",
-      "Oposta, Contrapositiva, Inversa",
-      "Proposições bicondicionais",
-      "Regras de equivalência"
-      ]
+      "Cognatos",
+      "Falsos Cognatos",
+      "Leitura de texto em Inglês",
+      "Tradução de textos",
+      "Marcas Tipográficas",
+      "Interpretação de texto e questões",
+      "Conceito de Skimming"
+    ]
   },
   {
-      "data": "21/08/2026"
-      "autor": "Poliana Freire dos Anjos de Oliveira"
-      "topicos": [
-        
-        "Cognatos",
-        "Falsos Cognatos",
-        "Leitura de texto em Inglês",
-        "Tradução de textos",
-        "Marcas Tipográficas",
-        "Interpretação de texto e questões sobre",
-        "Conceito de Skimming"
-        ]
-  },
-  {
-      "data": "22/08/2026"
-      "autor": "João Pinto"
-      "topicos": [
-        
-        "Textualidade",
-        "Coerência e coesão",
-        "Intencionalidade",
-        "Informatividade",
-        "Situacionalidade",
-        "Intertextualidade",
-        "Aceitabilidade"
-        ]
-   }
-        
+    "data": "22/08/2026",
+    "autor": "João Pinto",
+    "topicos": [
+      "Textualidade",
+      "Coerência e coesão",
+      "Intencionalidade",
+      "Informatividade",
+      "Situacionalidade",
+      "Intertextualidade",
+      "Aceitabilidade"
+    ]
+  }
 ]
