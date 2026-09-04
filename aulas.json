@@ -82,5 +82,49 @@
       "Intertextualidade",
       "Aceitabilidade"
     ]
+  },
+  {
+    "data": "26/08/2026",
+    "autor": "Camilo Alves Carvalho",
+    "topicos": [
+      "Descoberta da Eletricidade e componentes relacionados",
+      "Personas que participaram da evolução da eletricidade e computadores",
+      "Telecomunicações e Eletricidade: Telegrafia - 1844, Telefone - 1860, e Telefone - 1870",
+      "Evolução da comunicação e dos seus mecanismos",
+      "Dados, informações e compartilhamento",
+      "Máquina de Hollerith e o armazenamento de Dados",
+      "Automatização do processo de coleta de dados, até chegar no processamento de dados",
+      "Conceito de chaveamento e evolução dos componentes eletrônicos"
+    ]
+  },
+  {
+    "data": "31/08/2026",
+    "autor": "Camilo Alves Carvalho",
+    "topicos": [
+      "Relé, Transformadores, Semicondutores e o Circuito Integrado 8086",
+      "Circuitos elétricos, Resistência e Conexões",
+      "Litografia, Fabricação de processadores",
+      "A evolução dos computadores, memória de ferrite",
+      "John von Neumann, Projeto ENIAC",
+      "Funcionamento de uma TV de tubo"
+    ]
+  },
+  {
+    "data": "03/09/2026",
+    "autor": "Allan de Sousa Soares",
+    "topicos": [
+      "Proposições",
+      "Conjunções",
+      "Disjunções",
+      "Quantificadores",
+      "Agrupamento de quantificadores",
+      "Regras de inferência",
+      "Instanciação universal",
+      "Generalização universal",
+      "Nomes de equivalência",
+      "Lógica de predicados",
+      "Instanciação existencial",
+      "Generalização existencial"
+    ]
   }
 ]
